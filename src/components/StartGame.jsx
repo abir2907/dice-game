@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StartGame = ({ toggle }) => {
   return (
@@ -50,3 +51,7 @@ const Button = styled.button`
     transition: 0.3s background ease-in;
   }
 `;
+
+StartGame.propTypes = {
+  toggle: PropTypes.bool.isRequired,
+};
