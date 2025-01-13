@@ -1,7 +1,17 @@
 import styled from "styled-components";
 
-const NumberSelector = ({ error, selectedNumber, setSelectedNumber }) => {
+const NumberSelector = ({
+  error,
+  setError,
+  selectedNumber,
+  setSelectedNumber,
+}) => {
   const arrNumber = [1, 2, 3, 4, 5, 6];
+
+  const numberSelectorHandler = (value) => {
+    setSelectedNumber(value);
+    setError("");
+  };
 
   return (
     <NumberSelectorContainer>
@@ -11,7 +21,7 @@ const NumberSelector = ({ error, selectedNumber, setSelectedNumber }) => {
           <Box
             isSelected={value === selectedNumber}
             key={i}
-            onClick={() => setSelectedNumber(value)}
+            onClick={() => numberSelectorHandler(value)}
           >
             {value}
           </Box>

@@ -20,8 +20,6 @@ const GamePlay = () => {
       return;
     }
 
-    setError("");
-
     setCurrentDice(generateRandomNumber(1, 7));
 
     if (selectedNumber === currentDice) {
@@ -39,6 +37,7 @@ const GamePlay = () => {
         <TotalScore score={score} />
         <NumberSelector
           error={error}
+          setError={setError}
           selectedNumber={selectedNumber}
           setSelectedNumber={setSelectedNumber}
         />
