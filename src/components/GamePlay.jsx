@@ -21,6 +21,8 @@ const GamePlay = () => {
     } else {
       setScore((prev) => prev - 2);
     }
+
+    setSelectedNumber(undefined);
   };
 
   return (
