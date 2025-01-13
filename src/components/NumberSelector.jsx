@@ -1,9 +1,8 @@
-import { useState } from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-const NumberSelector = () => {
+const NumberSelector = ({ selectedNumber, setSelectedNumber }) => {
   const arrNumber = [1, 2, 3, 4, 5, 6];
-  const [selectedNumber, setSelectedNumber] = useState();
 
   return (
     <NumberSelectorContainer>
@@ -51,4 +50,10 @@ const Box = styled.div`
   font-weight: 700;
   background-color: ${({ isSelected }) => (isSelected ? "black" : "white")};
   color: ${({ isSelected }) => (!isSelected ? "black" : "white")};
+  cursor: pointer;
 `;
+
+NumberSelector.propTypes = {
+  selectedNumber: PropTypes.int.isRequired,
+  setSelectedNumber: PropTypes.int.isRequired,
+};
