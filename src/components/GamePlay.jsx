@@ -3,6 +3,8 @@ import NumberSelector from "./NumberSelector";
 import TotalScore from "./TotalScore";
 import RollDice from "./RollDice";
 import { useState } from "react";
+import { Button } from "../styled/Button";
+import { OutlineButton } from "../styled/Button";
 
 const GamePlay = () => {
   const [selectedNumber, setSelectedNumber] = useState();
@@ -31,6 +33,10 @@ const GamePlay = () => {
     setSelectedNumber(undefined);
   };
 
+  const resetScore = () => {
+    setScore(0);
+  };
+
   return (
     <MainContainer>
       <div className="top_section">
@@ -43,6 +49,10 @@ const GamePlay = () => {
         />
       </div>
       <RollDice currentDice={currentDice} rollDice={rollDice} />
+      <div className="btns">
+        <OutlineButton onClick={resetScore}>Reset Score</OutlineButton>
+        <Button>Show Rules</Button>
+      </div>
     </MainContainer>
   );
 };
@@ -56,5 +66,14 @@ const MainContainer = styled.main`
     display: flex;
     justify-content: space-around;
     align-items: end;
+  }
+
+  .btns {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 `;
