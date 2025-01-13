@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 const NumberSelector = ({ selectedNumber, setSelectedNumber }) => {
   const arrNumber = [1, 2, 3, 4, 5, 6];
