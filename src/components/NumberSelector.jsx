@@ -52,8 +52,3 @@ const Box = styled.div`
   color: ${({ isSelected }) => (!isSelected ? "black" : "white")};
   cursor: pointer;
 `;
-
-NumberSelector.propTypes = {
-  selectedNumber: PropTypes.int.isRequired,
-  setSelectedNumber: PropTypes.int.isRequired,
-};

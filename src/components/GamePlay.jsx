@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const GamePlay = () => {
   const [selectedNumber, setSelectedNumber] = useState();
+  const [currentDice, setCurrentDice] = useState(1);
   return (
     <MainContainer>
       <div className="top_section">
@@ -15,7 +16,7 @@ const GamePlay = () => {
           setSelectedNumber={setSelectedNumber}
         />
       </div>
-      <RollDice />
+      <RollDice currentDice={currentDice} setCurrentDice={setCurrentDice} />
     </MainContainer>
   );
 };
