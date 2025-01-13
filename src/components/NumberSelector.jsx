@@ -1,12 +1,20 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const NumberSelector = () => {
   const arrNumber = [1, 2, 3, 4, 5, 6];
+  const [selectedNumber, setSelectedNumber] = useState();
 
   return (
     <div>
       {arrNumber.map((value, i) => (
-        <Box key={i}>{value}</Box>
+        <Box
+          isSelected={value === selectedNumber}
+          key={i}
+          onClick={() => setSelectedNumber(value)}
+        >
+          {value}
+        </Box>
       ))}
     </div>
   );
@@ -22,4 +30,6 @@ const Box = styled.div`
   place-items: center;
   font-size: 24px;
   font-weight: 700;
+  background-color: ${({ isSelected }) => (isSelected ? "black" : "white")};
+  color: ${({ isSelected }) => (!isSelected ? "black" : "white")};
 `;
