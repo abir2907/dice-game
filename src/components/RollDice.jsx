@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-const RollDice = ({ currentDice, setCurrentDice }) => {
-  const generateRandomNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min) + min);
-  };
-
-  const rollDice = () => {
-    setCurrentDice(generateRandomNumber(1, 7));
-  };
-
+const RollDice = ({ currentDice, rollDice }) => {
   return (
     <DiceContainer>
       <div className="dice" onClick={rollDice}>
