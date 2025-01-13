@@ -58,7 +58,11 @@ const GamePlay = () => {
         </Button>
       </div>
 
-      {showRules && <Rules />}
+      {showRules && (
+        <div className="rules_container">
+          <Rules />
+        </div>
+      )}
     </MainContainer>
   );
 };
@@ -66,7 +70,9 @@ const GamePlay = () => {
 export default GamePlay;
 
 const MainContainer = styled.main`
-  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 
   .top_section {
     display: flex;
@@ -75,11 +81,19 @@ const MainContainer = styled.main`
   }
 
   .btns {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 10px;
+  }
+
+  .rules_container {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
 `;

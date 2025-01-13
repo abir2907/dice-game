@@ -12,14 +12,15 @@ const TotalScore = ({ score }) => {
 export default TotalScore;
 
 const ScoreContainer = styled.div`
-  max-width: 100px;
+  max-width: 200px;
   text-align: center;
   h1 {
-    font-size: 100px;
-    line-height: 100px;
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 5px;
   }
   p {
-    font-size: 24px;
-    font-weight: 500px;
+    font-size: 20px;
+    font-weight: 500;
   }
 `;

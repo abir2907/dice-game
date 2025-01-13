@@ -17,12 +17,17 @@ const RollDice = ({ currentDice, rollDice }) => {
 export default RollDice;
 
 const DiceContainer = styled.div`
-  margin-top: 48px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .dice {
     cursor: pointer;
+  }
+
+  p {
+    font-size: 18px;
+    margin-top: 5px;
   }
 `;
